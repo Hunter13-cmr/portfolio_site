@@ -1,0 +1,15 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    if ($email) {
+        // Vous pouvez ici ajouter le traitement de l'e-mail, comme l'enregistrer dans une base de données
+        // Redirection vers une autre page après la soumission
+        header("Location: thankyou.html");
+        exit;
+    } else {
+        echo "Adresse e-mail invalide.";
+    }
+} else {
+    echo "Méthode de requête non autorisée.";
+}
+?>
